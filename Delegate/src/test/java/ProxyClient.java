@@ -4,6 +4,9 @@ import STATICProxy.Myself;
 import STATICProxy.Scalper;
 import STATICProxy.Ticket;
 import net.sf.cglib.core.DebuggingClassWriter;
+import practice.mybatis.JDKProxy.MapperProxyFactory;
+import practice.mybatis.entity.User;
+import practice.mybatis.mapper.UserMapper;
 
 /**
  * @author yanyuchi
@@ -11,7 +14,7 @@ import net.sf.cglib.core.DebuggingClassWriter;
  */
 public class ProxyClient {
     public static void main(String[] args) {
-        dynamicProxyByCglib();
+        mybatis();
     }
 
 
@@ -37,6 +40,13 @@ public class ProxyClient {
         System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "E:\\project\\designModel\\DesignModel");
         Myself myself = CglibProxyUtil.getCglibProxy(new Myself());
         myself.buyTicket();
+    }
+
+
+    private static void mybatis(){
+        UserMapper userMapper = MapperProxyFactory.getMapper(UserMapper.class);
+        User user = userMapper.getUser(1);
+        System.out.println(user);
     }
 
 }
