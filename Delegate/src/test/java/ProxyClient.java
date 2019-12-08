@@ -4,6 +4,7 @@ import DYNAMICProxy.jdk.ProxyUtil;
 import STATICProxy.Myself;
 import STATICProxy.Scalper;
 import STATICProxy.Ticket;
+import net.sf.cglib.core.DebuggingClassWriter;
 
 /**
  * @author yanyuchi
@@ -34,6 +35,7 @@ public class ProxyClient {
     }
 
     private static void dynamicProxyByCglib(){
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "E:\\project\\designModel\\DesignModel");
         Myself myself = CglibProxyUtil.getCglibProxy(new Myself());
         myself.buyTicket();
     }
