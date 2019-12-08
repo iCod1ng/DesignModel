@@ -1,5 +1,4 @@
-import CGLIBProxy.CglibProxy;
-import CGLIBProxy.CglibProxyUtil;
+import DYNAMICProxy.cglib.CglibProxyUtil;
 import DYNAMICProxy.jdk.ProxyUtil;
 import STATICProxy.Myself;
 import STATICProxy.Scalper;

@@ -1,4 +1,4 @@
-package CGLIBProxy;
+package DYNAMICProxy.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 
