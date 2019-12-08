@@ -1,5 +1,5 @@
-import STATICDelegate.Myself;
-import STATICDelegate.Scalper;
+import STATICProxy.Myself;
+import STATICProxy.Scalper;
 
 /**
  * @author yanyuchi

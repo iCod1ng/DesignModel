@@ -1,4 +1,4 @@
-package STATICDelegate;
+package STATICProxy;
 
 public interface Ticket {
 
