@@ -5,6 +5,8 @@
 # IntelliJ project files
 .idea
 *.iml
+#JDK动态代理生成的代理类
+$Proxy0.class
 out
 gen
 Singleton/src/chocolate/

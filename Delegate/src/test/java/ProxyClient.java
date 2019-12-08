@@ -9,7 +9,11 @@ import STATICProxy.Ticket;
  */
 public class ProxyClient {
     public static void main(String[] args) {
-        dynamicProxyByJDK();
+        System.getProperties().put("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+        Ticket myself = ProxyUtil.getProxy(new Myself()); //获取到一个$Proxy开头的代理类
+        myself.buyTicket();  //调用目标方法，实际调用代理类的invoke方法
+        //代理类实现了接口，接口方法内调用super.h.invoke =>调用代理类的 buyTicket 方法相当于是调用 InvocationHandler 的 invoke 方法
+        //dynamicProxyByJDK();
     }
 
 
